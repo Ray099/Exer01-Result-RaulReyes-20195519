@@ -1,0 +1,50 @@
+
+listaRegistro = []
+print("----------------------------------------------------------------------")
+#se le indica al usuario como manejar el programa
+print("introdusca nombre de cliente, producto y costo de cada orden, introdusca 1 en el input que lo indica cuando desee terminar de introducir datos ")
+
+# se tiene el numero actual de ordenes introducidas por lo que empieza como 0 
+# a la vez se crea la variable del costo total
+# y la variable switch que detenga el programa cuando se mayor que 0 por lo tanto el usuario debe introducir uno para parar el proceso.
+costoTotal = 0.00
+numActual = 0
+switch=0
+# aqui esta el bucle para introducir el nombre, producto, y costo esta con varios mensajes para dirigir y asistir al usuario.
+# ademas la variable switch aparecera constantemente por si el usuario desea detenerse o dejar de introducir datos.
+# finalmente se suma el numero actual de ordenes introducidas y del costo para darle al usuario el numero actual de ordenes que lleva,
+# y el costo total que lleva.
+while(switch<1 ):
+    if True:
+        print("----------------------------------------------------------------------")
+        print(" ")
+        print("la cantidad de la ordenes ingresadas actual es...")
+        print(numActual)
+        numActual = numActual + 1
+        cliente = input("nombre del cliente:")
+        producto = input("producto:")
+        costo =float(input("costo($0.00):"))
+        costoTotal = costoTotal + costo
+        print("su costo total hasta el momento es...")
+        print(costoTotal)
+        switch=int(input("desea dejar de introducir clientes? introdusca 1/ si desea continuar introduzca 0:"))
+        print("----------------------------------------------------------------------")
+
+        registro = dict(cliente=cliente, producto=producto, costo=costo)
+
+        listaRegistro.append(registro)
+print("----------------------------------------------------------------------")
+print("se ha llegado al limite propuesto de ordenes")
+print("----------------------------------------------------------------------")
+print("su lista de ordenes es")
+#se le da la lista de Registros al usuario
+for registro in listaRegistro:
+    print(registro)
+print("----------------------------------------------------------------------")
+# se le da el costo total al usuario
+print("su costo Total final es...")
+print(costoTotal)
+print("----------------------------------------------------------------------")
+# se le agradece al usuario y acaba el programa
+print("muchas gracias por su uso")
+print("Fin del programa")
